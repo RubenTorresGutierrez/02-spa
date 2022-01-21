@@ -10,7 +10,7 @@ import { Heroe, HeroesService } from "../../services/heroes.service";
 export class HeroesComponent implements OnInit {
 
   //Atributtes
-  private heroes:Heroe[]
+  heroes:Heroe[]
 
   constructor(private _heroesService:HeroesService) {
 

@@ -1,13 +1,15 @@
 <h1 class="animated-fast">Héroes <small>Marvel y DC</small></h1>
 <hr />
-<div class="card-group">
-  <div class="card animated" *ngFor= "let heroe of heroes">
-    <img src="{{ heroe.img }}" class="card-img-top" [alt]= "heroe.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text">{{ heroe.bio }}</p>
-      <div class="btn btn-outline-primary btn-block">Ver más</div>
-      <p class="card-text"><small class="text-muted">{{ heroe.aparicion}}</small></p>
+<div class="row">
+  <div class="col-12 col-lg-4 animated" *ngFor= "let heroe of heroes; let i = index">
+    <div class="card h-100 m-2">
+      <img src="{{ heroe.img }}" class="card-img-top" [alt]= "heroe.nombre">
+      <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+        <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block" (click)="verHeroe(i)">Ver más</a>
+        <p class="card-text"><small class="text-muted">{{ heroe.aparicion}}</small></p>
+      </div>
     </div>
   </div>
 </div>

@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class HeroesComponent implements OnInit {
 
   //Atributtes
-  heroes:Heroe[]
+  heroes:Heroe[];
+  LONGITUD_TEXTO:number= 350;
 
   constructor(private _heroesService:HeroesService, private router:Router) {
 
@@ -29,6 +30,12 @@ export class HeroesComponent implements OnInit {
 
     this.heroes = this._heroesService.getHeroes();
 
+  }
+
+  puntosSuspensivos(i:number):string {
+    if (this.heroes[i].bio.length > this.LONGITUD_TEXTO)
+      return '...';
+    return ' ';
   }
 
 }

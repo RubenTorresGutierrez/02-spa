@@ -30,15 +30,14 @@
   </div>
 </nav>
 
-<div class="offcanvas offcanvas-start bg-dark text-light " id="sidebar">
-  <div class="offcanvas-header">
-    <h1 class="offcanvas-title">Heading</h1>
+<div class="offcanvas offcanvas-start" id="sidebar">
+  <div class="offcanvas-header bg-dark text-light">
+    <h1 class="offcanvas-title">Comic App</h1>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <p>Some text lorem ipsum.</p>
-    <button class="btn btn-secondary" type="button">A Button</button>
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action rounded-0" aria-current="page" [routerLink]="['home']" routerLinkActive="active">Home</a>
+    <a class="list-group-item list-group-item-action rounded-0" aria-current="page" [routerLink]="['about']" routerLinkActive="active">About</a>
+    <a class="list-group-item list-group-item-action rounded-0" aria-current="page" [routerLink]="['heroes']" routerLinkActive="active">Heroes</a>
   </div>
 </div>

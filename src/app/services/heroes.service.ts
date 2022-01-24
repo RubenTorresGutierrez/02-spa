@@ -76,6 +76,20 @@ export class HeroesService {
 
   }
 
+  public buscarHeroes(texto: string):Heroe[] {
+    let heroesEncontrados: Heroe[] = [];
+    texto = texto.toLowerCase();
+    for (let heroe of this.heroes)
+    {
+      let nombre = heroe.nombre.toLowerCase();
+      if (nombre.indexOf(texto) >= 0)
+      {
+        heroesEncontrados.push(heroe)
+      }
+    }
+    return heroesEncontrados;
+  }
+
 }
 
 export interface Heroe{

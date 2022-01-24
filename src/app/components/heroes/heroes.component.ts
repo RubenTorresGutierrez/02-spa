@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroe, HeroesService } from "../../services/heroes.service";
 import { Router } from '@angular/router';
+import { Heroe, HeroesService } from "../../services/heroes.service";
 
 @Component({
   selector: 'app-heroes',
@@ -14,7 +14,7 @@ export class HeroesComponent implements OnInit {
   heroes:Heroe[];
   LONGITUD_TEXTO:number= 350;
 
-  constructor(private _heroesService:HeroesService, private router:Router) {
+  constructor(private router:Router, private _heroesService:HeroesService) {
 
     this.heroes = []
 

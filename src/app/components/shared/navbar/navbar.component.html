@@ -3,7 +3,7 @@
     <nav class="navbar navbar-light bg-dark">
       <div class="container">
         <a data-bs-toggle="offcanvas" href="#sidebar" aria-controls="offcanvasExample">
-          <img src="assets/img/A-64.png" alt="" width="30" height="24">
+          <img src="assets/img/A-64.png" alt="" width="64" height="64">
         </a>
       </div>
     </nav>
@@ -23,8 +23,8 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input id="buscarTexto" class="form-control me-2" type="search" placeholder="Buscar héroe" aria-label="Search" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
-        <button class="btn btn-outline-success" type="button" (click)="buscarHeroe(buscarTexto.value)">Buscar</button>
+        <input id="buscarTexto" class="form-control me-2" type="search" placeholder="Buscar héroe" aria-label="Search" (keydown.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+        <button class="btn btn-outline-success" type="button" (click)="buscarHeroe(buscarTexto.value)" #buscarTexto>Buscar</button>
       </form>
     </div>
   </div>

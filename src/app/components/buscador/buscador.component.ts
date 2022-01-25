@@ -1,23 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HeroesService, Heroe } from '../../services/heroes.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Heroe, HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
-  styleUrls: []
+  styles: [
+  ]
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private _heroesService:HeroesService) {
+  //Atributtes
+  heroes:Heroe[];
+  LONGITUD_TEXTO:number= 350;
 
+  constructor(private router:Router, private activatedRoute: ActivatedRoute, private _heroesService:HeroesService) {
+
+    this.heroes = []
     this.activatedRoute.params.subscribe(parametros => {
-      console.log(this._heroesService.buscarHeroes(parametros['texto']))
+      this.heroes = this._heroesService.buscarHeroes(parametros['texto'])
     })
 
   }
 
   ngOnInit(): void {
+  }
+
+  verHeroe(id:number){
+
+    this.router.navigate(['/heroe', id]);
+
+  }
+
+  puntosSuspensivos(i:number):string {
+
+    if (this.heroes[i].bio.length > this.LONGITUD_TEXTO)
+      return '...';
+    return ' ';
+
   }
 
 }

@@ -33,9 +33,11 @@ export class HeroesComponent implements OnInit {
   }
 
   puntosSuspensivos(i:number):string {
+
     if (this.heroes[i].bio.length > this.LONGITUD_TEXTO)
       return '...';
     return ' ';
+
   }
 
 }

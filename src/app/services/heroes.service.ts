@@ -78,9 +78,18 @@ export class HeroesService {
 
   }
 
-  getHeroe(i:number):Heroe{
+  // @ts-ignore
+  getHeroe(i:string):Heroe{
 
-    return this.heroes[i]
+    for (let heroe of this.heroes){
+      if(heroe.nombre == i){
+        return heroe;
+      }
+
+
+    }
+
+    //return this.heroes[i]
 
   }
 

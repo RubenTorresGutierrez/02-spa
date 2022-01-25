@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Heroe, HeroesService } from '../../services/heroes.service';
+import {Heroe} from "../../interfaces/heroe";
+import {HeroesService} from "../../services/heroes.service";
+
 
 @Component({
   selector: 'app-buscador',
@@ -12,7 +14,8 @@ export class BuscadorComponent implements OnInit {
 
   //Atributtes
   heroes:Heroe[];
-  LONGITUD_TEXTO:number= 350;
+
+
 
   constructor(private router:Router, private activatedRoute: ActivatedRoute, private _heroesService:HeroesService) {
 
@@ -26,18 +29,8 @@ export class BuscadorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  verHeroe(id:number){
 
-    this.router.navigate(['/heroe', id]);
 
-  }
 
-  puntosSuspensivos(i:number):string {
-
-    if (this.heroes[i].bio.length > this.LONGITUD_TEXTO)
-      return '...';
-    return ' ';
-
-  }
 
 }

@@ -23,7 +23,7 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input id="buscarTexto" class="form-control me-2" type="search" placeholder="Buscar héroe" aria-label="Search" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+        <input id="buscarTexto" class="form-control me-2" type="search" placeholder="Buscar héroe" aria-label="Search" (keydown.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
         <button class="btn btn-outline-success" type="button" (click)="buscarHeroe(buscarTexto.value)">Buscar</button>
       </form>
     </div>
